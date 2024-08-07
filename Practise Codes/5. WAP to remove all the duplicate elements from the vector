@@ -1,0 +1,35 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout << "Enter Number of Elements to be inputed: ";
+    cin >> n; // Read the number of elements
+    vector<int> occurence(n); // Create a vector of size n
+
+    for(auto i = 0; i < occurence.size(); i++)
+    {
+        cin >> occurence[i]; // Read elements into the vector
+    }
+    for(auto i = 0; i < occurence.size() - 1; i++)
+    {
+        for(auto j = i + 1; j < occurence.size();)
+        {
+            if(occurence[i] == occurence[j])
+            {
+                occurence.erase(occurence.begin() + j); // Remove duplicate elements
+            }
+            else
+            {
+                j++;
+            }
+        }
+    }
+    for(auto i = 0; i < occurence.size(); i++)
+    {
+        cout << occurence[i] << "\t"; // Print the unique elements
+    }
+    return 0;
+}

@@ -1,0 +1,26 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main()
+{
+    int n, count = 0, num;
+    cout << "Enter Number of Elements to be inputed: ";
+    cin >> n; // Read the number of elements
+    cout << "Enter number: ";
+    cin >> num; // Read the number to be counted
+    vector<int> occurence(n); // Create a vector of size n
+    for(auto i = 0; i < occurence.size(); i++)
+    {
+        cin >> occurence[i]; // Read elements into the vector
+    }
+    for(auto i = 0; i < occurence.size(); i++)
+    {
+        if(occurence[i] == num)
+        {
+            count++; // Count occurrences of the specified number
+        }
+    }
+    cout << count; // Print the count
+    return 0;
+}
